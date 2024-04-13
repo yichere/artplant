@@ -1,12 +1,8 @@
-const password = "maya231225"
-const phone = "13840715453"
-
-
 const crypto = require('crypto');
 const md5 = crypto.createHash('md5');
-var cryptostr = md5.update(`${password}`).digest('hex');
 
-async function logmain() {
+async function logmain(password , phone ) {
+    var cryptostr = md5.update(`${password}`).digest('hex');
     try {
         let re = await fetch("https://app.huashijie.art/api/user/phoneLogin", {
             method: "POST",
